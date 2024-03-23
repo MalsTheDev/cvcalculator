@@ -58,8 +58,8 @@ function Calculator() {
     }
 
   return (
-    <div className='m-5 flex space-x-24 justify-center items-center space-y-12 flex-col xl:flex-row'>
-        <div className='flex flex-col space-y-5 w-1/3'>
+    <div className='m-5 flex justify-center items-center space-y-12 flex-col xl:flex-row xl:space-x-24'>
+        <div className='flex flex-col space-y-5 w-4/5 xl:w-1/3'>
             <div className='flex flex-col space-y-2 w-full'>
                 <label className={`${!age ? '' : age >= 30 && age <= 70  ? 'text-green-400' : 'text-red-400'}`}>Age</label>
                 <input type="number" placeholder='30-85' onChange={(e) => setAge(e.target.value)} value={age} className={`bg-gray-200 w-full rounded-xl p-2 outline-none border-2 ${!age ? '' : age >= 30 && age <= 70  ? 'border-green-400 bg-gray-50' : 'border-red-400 bg-gray-50'} transition-all`} />
@@ -108,7 +108,7 @@ function Calculator() {
             </form>
             <button className='text-xl px-5 self-center rounded-xl py-2 bg-green-400 w-full text-white' onClick={gender === 'male' ? calculateRisk : calculateRiskWomen}>CALCULATE</button>
         </div>
-        <div className='flex flex-col rounded-xl w-2/3 xl:w-1/3'>
+        <div className='flex flex-col rounded-xl w-4/5 xl:w-1/3'>
             <div className={`${!risk * 100 ? 'bg-green-400' : risk * 100 < 5 ? 'bg-green-400' : risk * 100 < 10 ? 'bg-orange-400' : risk * 100 < 20 ? 'bg-red-400' : 'bg-red-600'} p-5 rounded-t-xl transition-all`}>
                 <h1 className='text-white font-extrabold'>Result: {(risk > 0 ? (risk * 100).toFixed(2) + '%, ' + riskSum : '')}</h1>
             </div>
