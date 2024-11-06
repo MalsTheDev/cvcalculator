@@ -8,7 +8,7 @@ import React, { useState } from 'react'
 // – Systolic blood pressure
 // – Smoking status (1 for smoker, 0 for non-smoker)
 
-function Calculator() {
+function CvCalculator() {
     const [age, setAge] = useState()
     const [gender, setGender] = useState('male')
     const [totalChol, setTotalChol] = useState()
@@ -58,7 +58,7 @@ function Calculator() {
     }
 
   return (
-    <div className='m-5 flex justify-center items-center space-y-12 flex-col xl:flex-row xl:space-x-24'>
+    <div className='flex justify-center items-center space-y-12 flex-col xl:flex-row xl:space-x-24 bg-gray-100 rounded-xl py-2'>
         <div className='flex flex-col space-y-5 w-4/5 xl:w-1/3'>
             <div className='flex flex-col space-y-2 w-full'>
                 <label className={`${!age ? '' : age >= 30 && age <= 70  ? 'text-green-400' : 'text-red-400'}`}>Age</label>
@@ -116,6 +116,8 @@ function Calculator() {
                 <div className='flex flex-col'>
                     <h1 className='text-xl font-bold'>What is Framingham Risk Score for Hard Coronary Heart Disease</h1>
                     <p>The Framingham Risk Score (FRS) is a widely used tool to estimate the risk of developing hard coronary heart disease (CHD) over a specified time frame, typically 10 years. It considers factors such as age, gender, cholesterol levels, blood pressure and smoking status to calculate an individual's risk. The FRS helps clinicians identify high-risk patients who may benefit from interventions like lifestyle changes or medication. Despite its widespread use, FRS has limitations, such as its focus on traditional risk factors and potential underestimation of risk in certain populations. Continuous refinement and validation ensure its relevance in clinical practice.</p>
+                    <h1 className='my-5 font-bold text-xl'>Reference</h1>
+                    <a className='text-blue-500 underline' href='https://pubmed.ncbi.nlm.nih.gov/9603539/'>Wilson PW, et. al. Prediction of Coronary Heart Disease Using Risk Factor Categories. Circulation 1998. 97(18): 1837-1847.</a>
                 </div>
             </div>
         </div>
@@ -123,4 +125,4 @@ function Calculator() {
   )
 }
 
-export default Calculator
+export default CvCalculator

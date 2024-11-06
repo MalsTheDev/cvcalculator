@@ -1,12 +1,11 @@
 import React from 'react'
-import Navbar from './components/Navbar'
-import Calculator from './components/Calculator'
+import CvCalculator from './components/CvCalculator'
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
     <div>
-      <Navbar />
-      <Calculator />
+      <CvCalculator />
     </div>
   )
 }
